@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melendi Concert Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+      .navbar {
+        position: fixed;
+        width: 98%;
+        height: 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: white;
+        border-bottom: 1px solid #e0e0e0;
+        box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+      .logo {
+        font-weight: bold;
+        font-size: 22px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+      .logo {
+        text-decoration: none;
+        color: black;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        transition: font-weight 0.3s ease-in-out,
+          text-decoration 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      .nav-links a:hover {
+        font-weight: bold; 
+        text-decoration: underline;
+      }
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        padding: 5px 10px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+      .btn-primary {
+        background-color: black;
+        color: white;
+      }
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: white;
+        }
+        
+        .event-header {
+            background-image: url("./images/tickets/back-header.jpg");
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 300px;
+            
+        }
+        
+        .artist-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            margin-top: 250px;
+        }
+        
+        .event-info {
+            flex-grow: 1;
+            margin-top: 250px;
+        }
+        
+        .artist-name {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .event-details {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        
+        .ticket-selection {
+            padding: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .ticket-options {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .ticket-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .ticket-type:last-child {
+            border-bottom: none;
+        }
+        
+        .ticket-name {
+            font-weight: bold;
+        }
+        
+        .ticket-price {
+            color: #666;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .quantity {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #1a1a2e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #16162b;
+        }
+              
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+      }
+      .footer-links {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-size: 20px;
+      }
+
+      .social-icons {
+        margin: 0px; 
+      }
+
+      .social-icons img {
+        width: 30px;
+        margin: 0 0px;
+        filter: invert(1);
+      }
+
+      .legal-links {
+        margin-top: 15px; 
+        font-size: 12px;
+      }
+
+      .copyright {
+        margin-top: 15px; 
+        font-size: 12px; 
+      }
+      button:hover{
+
+        cursor:pointer;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">LOGIN</button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">REGISTRO</button>
+        </div>
+    </nav>
+    <header class="event-header">
+        <img src="./images/artist/melendi.jpg.webp" alt="Melendi" class="artist-image">
+        <div class="event-info">
+            <h1 class="artist-name">MELENDI</h1>
+            <p class="event-details">20 NOV - PLAZA DE TOROS LOS CALIFAS (CÓRDOBA)</p>
+        </div>
+    </header>
+    <div class="container">
+        <main class="ticket-selection">
+            <h2>SELECCIONA TUS ENTRADAS</h2>
+            <div class="ticket-options">
+                <div class="ticket-type">
+                    <span class="ticket-name">PALCO</span>
+                    <span class="ticket-price">149.99€</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                </div>
+                <div class="ticket-type">
+                    <span class="ticket-name">PISTA</span>
+                    <span class="ticket-price">94.99€</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                </div>
+                <div class="ticket-type">
+                    <span class="ticket-name">LAT. IZQUIERDO</span>
+                    <span class="ticket-price">84.99€</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                </div>
+                <div class="ticket-type">
+                    <span class="ticket-name">LAT. DERECHO</span>
+                    <span class="ticket-price">84.99€</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                </div>
+                <div class="ticket-type">
+                    <span class="ticket-name">VISIÓN REDUCIDA</span>
+                    <span class="ticket-price">64.99€</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">+</button>
+                        <span class="quantity">0</span>
+                        <button class="quantity-btn">-</button>
+                    </div>
+                </div>
+            </div>
+            <button class="add-to-cart">AÑADIR AL CARRITO</button>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html ">CARRITO</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                    alt="Instagram"></a>
+        </div>
+        <div class="legal-links">
+            <a href="./index.html">Política de Privacidad</a>
+            <a href="./index.html">Condiciones Generales</a>
+            <a href="./index.html">Política de Cookies</a>
+        </div>
+        <div class="copyright">
+            © SOWPASS 2024
+        </div>
+    </footer>
+</body>
+</html>

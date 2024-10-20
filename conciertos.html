@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="dx">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conciertos</title>
+    <style>
+        body {
+            font-family: roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 98%;
+            height: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out,
+                text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header {
+            background-image: url("./images/concerts/background.webp");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            font-size: 6em;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .artists {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .artist {
+            flex-basis: 25%;
+            text-align: center;
+            margin: 10px;
+            height: 420px;
+            border: 1px solid black;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        .artist h2 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .artist button {
+            padding: 10px 25px;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.5em;
+            z-index: 2;
+            border: 0px;
+            margin-top: 20px;
+        }
+
+        .artist p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .artist img {
+            margin-top: 15px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid black;
+        }
+
+        div.container h2 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        div.container p {
+            margin-bottom: 10px;
+        }
+
+        .separator {
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            color: white;
+            font-size: 24px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin: 0px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="conciertos.html">CONCIERTOS</a>
+            <a href="tienda.html">TIENDA</a>
+            <a href="/carrito">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">
+                LOGIN
+            </button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">
+                REGISTRO
+            </button>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="overlay"></div>
+        <h1>Conciertos</h1>
+    </header>
+
+    <div class="separator">
+        <h2>ELIGE TU CONCIERTO</h2>
+    </div>
+    <div class="container">
+        <div class="artists">
+            <div class="artist">
+                <img src="./images/artist/melendi.jpg.webp" alt="Melendi" />
+                <h2>MELENDI</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>20 NOV - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+            <div class="artist">
+                <img src="./images/artist/miloj.jpg" alt="Milo J" />
+                <h2>MILO J</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>27 NOV - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+            <div class="artist">
+                <img src="./images/artist/ozuna.webp" alt="Ozuna" />
+                <h2>OZUNA</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>10 DIC - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+            <div class="artist">
+                <img src="./images/artist/jbalvin.jpeg" alt="J Balvin" />
+                <h2>J BALVIN</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>17 DIC - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+            <div class="artist">
+                <img src="./images/artist/camilo.jpeg" alt="Camilo" />
+                <h2>CAMILO</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>15 ENE - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+            <div class="artist">
+                <img src="./images/artist/rosalia.jpeg" alt="Rosalía" />
+                <h2>ROSALÍA</h2>
+                <p>Plaza de toros los Califas (CÓRDOBA)</p>
+                <p>21 ENE - 22:00</p>
+                <button onclick="window.location.href='./seleccion-entradas.html'">
+                    ENTRADAS
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html ">CARRITO</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png"
+                    alt="TikTok" /></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                    alt="Facebook" /></a>
+            <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter" /></a>
+            <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                    alt="Instagram" /></a>
+        </div>
+        <div class="legal-links">
+            <a href="./index.html">Política de Privacidad</a>
+            <a href="./index.html">Condiciones Generales</a>
+            <a href="./index.html">Política de Cookies</a>
+        </div>
+        <div class="copyright">© SOWPASS 2024</div>
+    </footer>
+</body>
+
+</html>

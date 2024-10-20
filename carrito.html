@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            height: 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out,
+                text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .cart-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 80px auto 20px;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-name,
+        .item-subname,
+        .item-price {
+            margin: 0;
+        }
+
+        .item-subname {
+            font-weight: bold;
+        }
+
+        .item-price {
+            color: #888;
+        }
+
+        .item-quantity-container {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            width: 25px;
+            height: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .item-subtotal {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px solid #000;
+            font-weight: bold;
+        }
+
+        .total-amount {
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        button:hover {
+
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="conciertos.html">CONCIERTOS</a>
+            <a href="tienda.html">TIENDA</a>
+            <a href="/carrito">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">
+                LOGIN
+            </button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">
+                REGISTRO
+            </button>
+        </div>
+    </nav>
+    <div class="cart-container">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>ARTÍCULO</th>
+                    <th>SUBTOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item-details">
+                        <img src="./images/shop/items/sudadera-jbalvin.webp" alt="Sudadera J Balvin" class="item-image">
+                        <div class="item-info">
+                            <p class="item-name">SUDADERA GIRA</p>
+                            <p class="item-subname">"J BALVIN"</p>
+                            <p class="item-price">57.99€</p>
+
+
+                            <div class="item-quantity-container">
+                                <span>CANTIDAD:</span>
+                                <button class="quantity-btn">-</button>
+                                <input type="text" value="1" class="quantity-input" readonly>
+                                <button class="quantity-btn">+</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="item-subtotal">57.99€</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-total">
+            <span>TOTAL:</span>
+            <span class="total-amount">57.99€</span>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html ">CARRITO</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                    alt="Instagram"></a>
+        </div>
+        <div class="legal-links">
+            <a href="./index.html">Política de Privacidad</a>
+            <a href="./index.html">Condiciones Generales</a>
+            <a href="./index.html">Política de Cookies</a>
+        </div>
+        <div class="copyright">
+            © SOWPASS 2024
+        </div>
+    </footer>
+</body>
+
+</html>

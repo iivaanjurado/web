@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("./images/login/back.jpg");
+        }
+
+        .navbar {
+            position: fixed;
+            width: 98%;
+            height: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .login-button {
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            width: 105%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .login-button:hover {
+            background-color: #d95d52;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin: 0px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .footer a {
+
+            text-decoration: none;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">LOGIN</button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">REGISTRO</button>
+        </div>
+    </nav>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="login-button">Iniciar Sesión</button>
+            <div class="footer">
+                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html ">CARRITO</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                    alt="Instagram"></a>
+        </div>
+        <div class="legal-links">
+            <a href="./index.html">Política de Privacidad</a>
+            <a href="./index.html">Condiciones Generales</a>
+            <a href="./index.html">Política de Cookies</a>
+        </div>
+        <div class="copyright">
+            © SOWPASS 2024
+        </div>
+    </footer>
+
+</body>
+
+</html>

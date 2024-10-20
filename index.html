@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Venta de Entradas</title>
+    <style>
+        body {
+            font-family: roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header {
+            background-image: url('./images/landing/concierto-header.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            font-size: 6em;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        .button-header {
+
+            padding: 10px 25px;
+            background-color: #FF6F61;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.5em;
+            z-index: 2;
+            border: 0px;
+
+        }
+
+        .navbar {
+            position: fixed;
+            width: 98%;
+            height: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .logo {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .artists {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .artist {
+            flex-basis: 25%;
+            text-align: center;
+            margin: 10px;
+            border: 1px solid black;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        .artist h2 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .artist p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .artist img {
+            margin-top: 15px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid black;
+        }
+
+        div.container h2 {
+
+            text-align: center;
+            font-size: 40px;
+        }
+
+        div.container p {
+
+            margin-bottom: 10px;
+        }
+
+        .reasons {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 200px;
+        }
+
+        .reason {
+            flex-basis: 20%;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: 5px solid #FF6F61;
+            border-radius: 5px;
+        }
+
+        .reasons img {
+
+            width: 50%;
+            max-width: 170px;
+            height: auto;
+            margin-bottom: 10px;
+
+        }
+
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .review {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        .review h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .review p {
+            margin: 0 0 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .review .info {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-align: left;
+            padding-top: 10px;
+        }
+
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 5px;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .user-date {
+            color: #999;
+            font-size: 10px;
+        }
+
+        .separator {
+
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            color: white;
+            font-size: 24px;
+
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin: 0px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+
+
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        button:hover {
+
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">LOGIN</button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">REGISTRO</button>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="overlay"></div>
+        <h1>Nuevos Conciertos</h1>
+        <button class="button-header" onclick="window.location.href='./conciertos.html'">Ver más</button>
+    </header>
+
+    <div class="separator">
+        <h2>TÚ COMPRA DE ENTRADAS FÁCIL Y RÁPIDA</h2>
+    </div>
+
+    <div class="container">
+        <h2>¡ÚLTIMAS ENTRADAS!</h2>
+        <div class="artists">
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/melendi.jpg.webp" alt="Melendi">
+                    <h2>MELENDI</h2>
+                    <p>20 NOV - CÓRDOBA</p>
+                </a>
+            </div>
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/miloj.jpg" alt="Milo J">
+                    <h2>MILO J</h2>
+                    <p>27 NOV - CÓRDOBA</p>
+                </a>
+            </div>
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/ozuna.webp" alt="Ozuna">
+                    <h2>OZUNA</h2>
+                    <p>10 DIC - CÓRDOBA</p>
+                </a>
+            </div>
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/jbalvin.jpeg" alt="J Balvin">
+                    <h2>J BALVIN</h2>
+                    <p>17 DIC - CÓRDOBA</p>
+                </a>
+            </div>
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/camilo.jpeg" alt="Camilo">
+                    <h2>CAMILO</h2>
+                    <p>15 ENE - CÓRDOBA</p>
+                </a>
+            </div>
+            <div class="artist">
+                <a href="./seleccion-entradas.html">
+                    <img src="./images/artist/rosalia.jpeg" alt="Rosalía">
+                    <h2>ROSALÍA</h2>
+                    <p>21 ENE - CÓRDOBA</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="separator">
+        <h2>¿POR QUÉ ELEGIR SHOWPASS?</h2>
+    </div>
+
+    <div class="reasons">
+        <div class="reason">
+            <img src="./images/icons/sand-watch.png" alt="reloj">
+            <h3>COMPRA RÁPIDA Y FÁCIL</h3>
+            <p>Adquiere tus entradas en cuestión de segundos con nuestra plataforma intuitiva y fácil de usar.</p>
+        </div>
+        <div class="reason">
+            <img src="./images/icons/security.png" alt="seguridad">
+            <h3>SEGURIDAD GARANTIZADA</h3>
+            <p>Tus datos están protegidos con las últimas tecnologías de encriptación. Compra con confianza.</p>
+        </div>
+        <div class="reason">
+            <img src="./images/icons/tickets.png" alt="entradas">
+            <h3>LOS MEJORES CONCIERTOS</h3>
+            <p>Accede a los eventos más esperados y disfruta de tus artistas favoritos en vivo.</p>
+        </div>
+        <div class="reason">
+            <img src="./images/icons/support.png" alt="soporte">
+            <h3>Soporte al Cliente Dedicado</h3>
+            <p>Nuestro equipo de soporte está siempre disponible para ayudarte en cualquier etapa del proceso de compra.
+            </p>
+        </div>
+    </div>
+
+    <div class="separator">
+
+        <h2>LEE ALGUNA RESEÑA DE NUESTROS CLIENTES</h2>
+    </div>
+    <div class="reviews">
+        <div class="review">
+            <h2>Impresionante</h2>
+            <p>¡Increíble! Compré entradas para Ozuna y el proceso fue rápido y sencillo. ¡Volveré sin dudarlo!</p>
+            <div class="info">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <span class="user-name">Laura M.</span>
+                    <span class="user-date">Hace 2 semanas</span>
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <h2>Fácil y Rápido</h2>
+            <p>La compra en línea fue fácil. ¡Recomiendo Showpass a todos mis amigos!</p>
+            <div class="info">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <span class="user-name">Ana R.</span>
+                    <span class="user-date">Hace 1 semana</span>
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <h2>Confiabilidad </h2>
+            <p>Siempre satisfecho con Showpass. Compré entradas para Rosalía, ¡no puedo esperar!</p>
+            <div class="info">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <span class="user-name">Daniel G.</span>
+                    <span class="user-date">Hace 4 meses</span>
+                </div>
+            </div>
+        </div>
+        <div class="review">
+            <h2>Buena navegación</h2>
+            <p>La página es fácil de usar. Compré para J Balvin sin complicaciones.</p>
+            <div class="info">
+                <div class="user-avatar"></div>
+                <div class="user-info">
+                    <span class="user-name">Javier P.</span>
+                    <span class="user-date">Hace 3 días</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+
+    <footer>
+        <div class="footer-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html ">CARRITO</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                    alt="Facebook"></a>
+            <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                    alt="Instagram"></a>
+        </div>
+        <div class="legal-links">
+            <a href="./index.html">Política de Privacidad</a>
+            <a href="./index.html">Condiciones Generales</a>
+            <a href="./index.html">Política de Cookies</a>
+        </div>
+        <div class="copyright">
+            © SOWPASS 2024
+        </div>
+    </footer>
+
+</body>
+
+</html>
