@@ -1,0 +1,659 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body,html {
+    font-family: roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+
+header button,h1{
+
+    z-index: 50;
+}
+
+.navbar {
+    top: 0;
+    margin-top: 0;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: font-weight 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.artists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transition: transform 2s ease;
+}
+
+.artist {
+    flex-basis: 25%;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+    
+}
+.artist:hover{
+
+    transform: scale(1.1);
+}
+
+.artist h2 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.artist p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.artist img {
+    margin-top: 15px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+div.container h2 {
+
+    text-align: center;
+    font-size: 40px;
+}
+
+div.container p {
+
+    margin-bottom: 10px;
+}
+
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.review {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.review h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.review p {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.review .info {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 5px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.user-date {
+    color: #999;
+    font-size: 10px;
+}
+
+.separator {
+
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: white;
+    font-size: 24px;
+
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 20px;
+}
+
+.social-icons {
+    margin: 0px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 0px;
+    filter: invert(1);
+
+
+}
+
+.legal-links {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+
+    cursor: pointer;
+}
+/*CARRUSEL*/
+.carrusel{
+    width: 800px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+
+}
+.carrusel ul{
+
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+.carrusel li{
+
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.carrusel img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@keyframes slide{
+
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    70% {margin-left: -300%;}
+}
+.cart-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 80px auto 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name,
+.item-subname,
+.item-price {
+    margin: 0;
+}
+
+.item-subname {
+    font-weight: bold;
+}
+
+.item-price {
+    color: #888;
+}
+
+.item-quantity-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    text-align: right;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #000;
+    font-weight: bold;
+}
+
+.total-amount {
+    font-size: 1.2em;
+}
+
+.artists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.artist {
+    flex-basis: 25%;
+    text-align: center;
+    margin: 10px;
+    height: 420px;
+    border: 1px solid black;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+}
+
+.artist h2 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.artist button {
+    padding: 10px 25px;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.5em;
+    z-index: 2;
+    border: 0px;
+    margin-top: 20px;
+}
+
+.artist p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.artist img {
+    margin-top: 15px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+div.container h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+div.container p {
+    margin-bottom: 10px;
+}
+.product-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex-basis: 40%;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-details {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-cart {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cart:hover {
+    background-color: #e65b54;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    flex-basis: 30%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.btn-buy {
+    background-color: #ff6f61;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tickets {
+    max-width: 600px;
+    margin: 60px auto;
+    background-color: white;
+}
+
+.event-header {
+    background-image: url("./images/tickets/back-header.jpg");
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    height: 300px;
+    
+}
+
+.artist-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    margin-top: 250px;
+}
+
+.event-info {
+    flex-grow: 1;
+    margin-top: 250px;
+}
+
+.artist-name {
+    margin: 0;
+    font-size: 24px;
+}
+
+.event-details {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.ticket-selection {
+    padding: 20px;
+}
+
+main.ticket-selection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ticket-options {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.ticket-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-type:last-child {
+    border-bottom: none;
+}
+
+.ticket-name {
+    font-weight: bold;
+}
+
+.ticket-price {
+    color: #666;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #16162b;
+}
