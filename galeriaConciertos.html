@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Conciertos</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+
+            
+            background-image: url('./images/carrusel/uno.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        /*estilo footer*/
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin: 0px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+
+
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a class="logo" href="./index.html">SHOWPASS</a>
+    <div class="nav-links">
+        <a href="./conciertos.html">CONCIERTOS</a>
+        <a href="./tienda.html">TIENDA</a>
+        <a href="./carrito.html">CARRITO</a>
+    </div>
+    <div class="auth-buttons">
+        <button class="btn" onclick="window.location.href='./login.html'">LOGIN</button>
+        <button class="btn btn-primary" onclick="window.location.href='./registro.html'">REGISTRO</button>
+    </div>
+</nav>
+<main>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-bold text-white">¿Estás indeciso por venir a uno de nuestros conciertos?</h1>
+            <p class="lead text-white fw-semibold">Aquí te vamos a mostrar algunos de nuestros conciertos para que te animes y vengas a uno de nuestros conciertos.</p>
+        </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto-rosalia.jpg" alt="" class="">
+                <div class="card-body">
+                <p class="card-text justify-content-center">Concierto de Rosalía.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto camilo.jpg" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Camilo.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto david bisbal.jpg" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de David Bisbal.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto de aitana.webp" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Aitana.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto duki.jpg" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Duki.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto manuel carrasco.webp" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Manuel Carrasco.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto melendi.jpg" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Melendi.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto quevedo.jpg" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Quevedo.</p>
+                </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src="./images/galeria/concierto taylor swift.webp" alt="">
+                <div class="card-body">
+                <p class="card-text">Concierto de Taylor Swift.</p>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="./conciertos.html">CONCIERTOS</a>
+        <a href="./tienda.html">TIENDA</a>
+        <a href="./carrito.html ">CARRITO</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+        <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                alt="Facebook"></a>
+        <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                alt="Instagram"></a>
+    </div>
+    <div class="legal-links">
+        <a href="./index.html">Política de Privacidad</a>
+        <a href="./index.html">Condiciones Generales</a>
+        <a href="./index.html">Política de Cookies</a>
+        <a href="./informacion-productos.html">Como cuidar los productos</a>
+        <a href="./galeriaConciertos.html">Galería de Conciertos</a>
+    </div>
+    <div class="copyright">
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SHOWPASS</span> by <span property="cc:attributionName">Ivan Jurado</span> is marked with <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+</footer>
+
+</body>
+</html>

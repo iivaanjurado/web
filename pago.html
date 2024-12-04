@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Pago</title>
+    <style>
+        body{
+
+            background-image: url('./images/carrusel/uno.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 22px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: font-weight 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: black;
+            color: white;
+        }
+
+        /*estilo footer*/
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin: 0px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 0 0px;
+            filter: invert(1);
+
+
+        }
+
+        .legal-links {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="./index.html">SHOWPASS</a>
+        <div class="nav-links">
+            <a href="./conciertos.html">CONCIERTOS</a>
+            <a href="./tienda.html">TIENDA</a>
+            <a href="./carrito.html">CARRITO</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn" onclick="window.location.href='./login.html'">LOGIN</button>
+            <button class="btn btn-primary" onclick="window.location.href='./registro.html'">REGISTRO</button>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container d-flex justify-content-center align-items-center"    >
+          <div class="col-md-6 col-lg-5">
+            <h4 class="mb-3 mt-5 text-white">Dirección de envío</h4>
+      
+            <form class="needs-validation bg-white p-5 mb-4" novalidate="">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Se requiere un nombre válido.
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Se requiere apellido válido.
+                  </div>
+                </div>
+      
+                <div class="col-12">
+                  <label for="username" class="form-label">Nombre de usuario</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" required="">
+                    <div class="invalid-feedback">
+                      Tu nombre de usuario es requerido.
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-12">
+                  <label for="email" class="form-label">Email <span class="text-muted">(Opcional)</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="tu@example.com">
+                  <div class="invalid-feedback">
+                    Ingresa una dirección de correo electrónico válida para actualizaciones de envío.
+                  </div>
+                </div>
+      
+                <div class="col-12">
+                  <label for="address" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                  <div class="invalid-feedback">
+                    Por favor introduce tu direccion de envio.
+                  </div>
+                </div>
+      
+                <div class="col-12">
+                  <label for="address2" class="form-label">Dirección 2 <span class="text-muted">(Opcional)</span></label>
+                  <input type="text" class="form-control" id="address2" placeholder="Apartamento o suite">
+                </div>
+      
+                <div class="col-md-5">
+                  <label for="country" class="form-label">País</label>
+                  <select class="form-select" id="country" required="">
+                    <option value="">Elige...</option>
+                    <option>United States</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Selecciona un país válido.
+                  </div>
+                </div>
+      
+                <div class="col-md-4">
+                  <label for="state" class="form-label">Estado</label>
+                  <select class="form-select" id="state" required="">
+                    <option value="">Elige...</option>
+                    <option>California</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Proporciona un estado válido.
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Código postal</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Código postal requerido.
+                  </div>
+                </div>
+              </div>
+      
+              <hr class="my-4">
+      
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">La dirección de envío es la misma que mi dirección de facturación</label>
+              </div>
+      
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">Guardar esta información para la próxima vez</label>
+              </div>
+      
+              <hr class="my-4">
+      
+              <h4 class="mb-3">Pago</h4>
+      
+              <div class="my-3">
+                <div class="form-check">
+                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                  <label class="form-check-label" for="credit">Tarjeta de crédito</label>
+                </div>
+                <div class="form-check">
+                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                  <label class="form-check-label" for="debit">Tarjeta de débito</label>
+                </div>
+                <div class="form-check">
+                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                  <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+              </div>
+      
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                  <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                  <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
+                  <div class="invalid-feedback">
+                    Se requiere el nombre en la tarjeta
+                  </div>
+                </div>
+      
+                <div class="col-md-6">
+                  <label for="cc-number" class="form-label">Número de tarjeta de crédito</label>
+                  <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Se requiere número de tarjeta de crédito
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <label for="cc-expiration" class="form-label">Vencimiento</label>
+                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Fecha de vencimiento requerida
+                  </div>
+                </div>
+      
+                <div class="col-md-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Código de seguridad requerido
+                  </div>
+                </div>
+              </div>
+      
+              <hr class="my-4">
+            </form>
+            <button data-bs-toggle="modal" data-bs-target="#modalCompra" class="w-100 btn btn-primary btn-lg mb-5">Pagar</button>
+          </div>
+        </div>
+      </main>
+
+
+      <div id="modalCompra" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               
+                <div class="modal-header">
+                    <h5 class="modal-title">¡Hemos recibido tu pedido!</h5>
+                    <button class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Hola, ya hemos recibido tu pedido, en breves momentos te llegará un correo electrónico con todos los detalles.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="./index.html" class="btn btn-danger">Inicio</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    <footer>
+    <div class="footer-links">
+        <a href="./conciertos.html">CONCIERTOS</a>
+        <a href="./tienda.html">TIENDA</a>
+        <a href="./carrito.html ">CARRITO</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/es/" target="_blank"><img src="./images/rrss/tik-tok.png" alt="TikTok"></a>
+        <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="./images/rrss/facebook.png"
+                alt="Facebook"></a>
+        <a href="https://x.com/?lang=es" target="_blank"><img src="./images/rrss/x.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/?hl=es" target="_blank"><img src="./images/rrss/instagram.png"
+                alt="Instagram"></a>
+    </div>
+    <div class="legal-links">
+        <a href="./index.html">Política de Privacidad</a>
+        <a href="./index.html">Condiciones Generales</a>
+        <a href="./index.html">Política de Cookies</a>
+        <a href="./informacion-productos.html">Como cuidar los productos</a>
+        <a href="./galeriaConciertos.html">Galería de Conciertos</a>
+    </div>
+    <div class="copyright">
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SHOWPASS</span> by <span property="cc:attributionName">Ivan Jurado</span> is marked with <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+</footer>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
